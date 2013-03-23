@@ -1,0 +1,71 @@
+import java.lang.*
+import java.io.*
+
+class interest
+ {
+    DataInputStream d=new DataInputStream(system.in); 
+    int p,n;
+    float r;
+    double I;
+    
+    interest(int x,int y,float z)
+    {   
+      p=x;
+      n=y;
+      r=z;
+    }
+
+     void disp()
+    {
+       System.out.println("\nP="+p+"\nn="+n+"\nR="+r);
+       System.out.println("Interest="+I);
+    }
+
+ }
+
+class si extends interest
+  {
+    si(int x,int y,float z)
+   {
+     super(x,y,z);
+     Sysytem.out.println("Simple Interest");
+    }
+ 
+    void calc()
+    {
+      I=p*n*r/100;
+     }  
+  }
+ 
+ class ci extends interest
+ {
+  ci(int x,int y,float z)
+  {
+   super(x,y,z);
+   Sysytem.out.println("Compound Interest");
+   }
+   void calc()
+   {
+    I=(int)p*Math.pow((1+r/100),n);
+    }
+ }
+ Class invoke
+ {
+   public static void main(String arg[])throws IOException
+    {
+      DataInputStream d=new DataInputStream(system.in); 
+      System.out.print("Enter the Princple amount, No.of yrs & Rate of interest");
+       int P,N;
+       float R;
+      P=integer.parseInt(system.in);
+      N=integer.parseInt(system.in);
+      R=integer.parseInt(system.in);
+      si s=new si(P,N,R);
+      s.calc();
+      s.disp();
+      ci c=new ci(P,N,R);
+      c.calc();
+      c.disp();    
+     }
+
+ }
